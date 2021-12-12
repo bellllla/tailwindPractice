@@ -3,7 +3,11 @@ module.exports = {
   darkMode: false,
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'black-rgba': 'rgba(0, 0, 0, 0.05)',
+      },
+    },
   },
   variants: {
     extend: {},
