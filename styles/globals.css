@@ -1,3 +1,13 @@
+/*tailwind 글로벌 import 하기
+@tailwind 삼총사로 글로벌에 묶어두면 
+app.js 에 따로  import "tailwindcss/tailwind.css";
+할 필요 없다. import "../styles/globals.css"; 로 그냥 해도됨.
+@tailwind base 는 전부 초기화 상태로 만들어두는듯.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -13,4 +23,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+section {
+  margin : 20px;
+  padding : 10px;
+  border : 1px solid rgb(180, 176, 176);
+  border-radius: 8px;
 }
