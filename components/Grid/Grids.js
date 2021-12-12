@@ -1,10 +1,10 @@
 import React from "react";
-import Link from 'next/link';
+import GoMain from "../Common/GoMain";
 
 function Grids() {
   return (
     <section>
-      <Link href ='/'>go Main</Link>
+      <GoMain />
       <div className="p-8"> 
         <div
           className="grid grid-cols-4 gap-4"

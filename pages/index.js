@@ -16,7 +16,7 @@ export default function Home() {
     >
       <h1 className="
       capitalize
-      text-2xl
+      text-4xl
       text-sky-500 ">tailwind with next.js</h1>
       <h2>the first practice tailwind with next.js</h2>
 
@@ -30,7 +30,7 @@ export default function Home() {
                 className={`
                   text-gray-500
                   bg-sky-${links.color} 
-                  
+                  text-lg
                   p-4 rounded w-50
                   text-center
                   shadow-lg
@@ -41,7 +41,7 @@ export default function Home() {
                   `}
               >
                 {" "}
-                move to {links.link} link
+                {links.link} link
               </a>
             </>
           );

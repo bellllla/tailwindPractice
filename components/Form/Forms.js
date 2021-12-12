@@ -1,22 +1,34 @@
-import React from 'react'
-import Link from 'next/link';
+import React,{useState} from 'react'
+import GoMain from '../Common/GoMain'
 
 function Forms() {
+
+  const [inputText, setInputText] = useState('')
+  const [addText, setAddText] = useState([])
+  const [disabled , setDisabled] = useState(false);
+
+  const submitHandler = (e) => {
+    setDisabled(true)
+    e.preventDefault();
+    setAddText([inputText,...addText])
+    setInputText('')
+    setDisabled(false)
+  }
+  const inputChangeHandler = (e) => {
+    setInputText(e.target.value)
+  }
+
   return (
     <section>
-      <Link href= '/'>go Main</Link>
+      <GoMain />
 
-    <form>
-    <label className="block">
-      <span className="
-      block text-sm font-medium text-pink-400">
-        Username
-      </span>
+    <form onSubmit={submitHandler}>
+    <label className="block text-sm font-medium text-pink-400">Add Something</label>
       <input
         type="text"
-        placeholder="hi"
-        // value="tbone"
-        // disabled
+        onChange={inputChangeHandler}
+        value = {inputText}
+        placeholder="Enter any text you want to write!"
         className="
         mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
         focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
@@ -25,7 +37,16 @@ function Forms() {
         focus:invalid:border-pink-500 focus:invalid:ring-pink-500
         "
       />
-    </label>
+      <button 
+      disabled={disabled}
+      type = 'submit'name = 'add-btn'>+</button>
+
+      {addText.map((text,idx)=>{
+        return (
+          <li key = {idx}>{text}</li>
+        )
+      })}
+
   </form>
   </section>
   )
